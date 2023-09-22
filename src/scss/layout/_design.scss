@@ -1,0 +1,157 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+body {
+    @include m.mobile {
+        font-size: 1.5rem;
+        line-height: 2.5rem;
+    }
+}
+
+.header {
+
+    .log {
+
+        @include m.mobile {
+            margin: 2rem;
+        }
+
+        &__logo {
+
+            @include m.mobile {
+                width: 10rem;
+            }
+        }
+    }
+}
+
+.nav {
+
+    @include m.mobile {
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+    }
+
+    .navbottom {
+
+        @include m.mobile {
+            display: flex;
+            align-items: center;
+        }
+
+        &__link {
+            color: black;
+            box-shadow: 0px 1px 2px 2px rgba(0,0,0,0.15);
+
+            @include m.mobile {
+                border-radius: 50%;
+                padding: 1rem;
+            }
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }
+    }
+}
+
+.container {
+    
+    .conhead {
+
+        @include m.mobile {
+            border-top: .3rem solid v.$turquoise;
+        }
+        
+        &__img--dk {
+
+            @include m.mobile {
+                display: none;
+            }
+        }
+
+        &__img--mb {
+
+            @include m.mobile {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    .info {
+        //background-color: red;
+
+        @include m.mobile {
+            border-radius: 2rem;
+        }
+    
+        .prime {
+            @include m.mobile {
+                border: .2rem solid v.$purple;
+                border-radius: 1rem;
+                margin-left: 1.5rem;
+                margin-right: 1.5rem;
+            }
+
+            .primecon {
+
+                @include m.mobile {
+                    padding: 2rem;
+                }
+
+                &__tl {
+                    @include m.mobile {
+                        color: v.$purple;
+                    }
+                }
+            }
+        }
+    }
+
+    .chv {
+        @include m.mobile {
+            border-radius: 2rem;
+            border: .2rem solid v.$gray;
+            border-radius: 1rem;
+            padding: 1rem;
+            margin: 2rem 1.5rem;
+        }
+
+        .offer {
+
+            .offercon {
+                padding: 1rem;
+
+                &__tl {
+                    color: #364B95;
+                }
+            }
+
+            .linkbot {
+
+                @include m.mobile {
+                    display: flex;
+                    justify-content: center;
+                }
+
+                &__bottom {
+                    background-color: v.$purple;
+                    color: white;
+                    padding: 1rem 2rem;
+                    border-radius: 3rem;
+                    margin: 2rem auto;
+                }
+            }
+        }
+
+        .minfo {
+
+            .km,
+            .term {
+                @include m.mobile {
+                    padding: 2rem;
+                }
+            }
+        }
+    }
+}
+
