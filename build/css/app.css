@@ -130,6 +130,8 @@ a {
     border: 0.2rem solid #92BBCF;
     border-radius: 1rem;
     margin: auto 1.5rem;
+    margin-bottom: 4rem;
+    overflow: hidden;
   }
 }
 .container .chv .offer .offercon {
@@ -205,6 +207,12 @@ a {
 @media (max-width: 768px) {
   .container .chv .sp__txt {
     padding: 3rem 2rem;
+  }
+}
+@media (max-width: 768px) {
+  .container .chv .imgfooter {
+    display: flex;
+    overflow: hidden;
   }
 }
 @media (max-width: 768px) {

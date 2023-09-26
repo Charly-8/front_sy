@@ -120,6 +120,8 @@ body {
             border: .2rem solid v.$gray;
             border-radius: 1rem;
             margin: auto 1.5rem;
+            margin-bottom: 4rem;
+            overflow: hidden;
         }
 
         .offer {
@@ -213,6 +215,10 @@ body {
         }
 
         .imgfooter {
+            @include m.mobile {
+                display: flex;
+                overflow: hidden;
+            }
 
             &__img {
                 @include m.mobile {
