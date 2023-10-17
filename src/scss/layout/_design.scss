@@ -6,6 +6,15 @@ body {
         font-size: 1.5rem;
         line-height: 2.5rem;
     }
+
+    @include m.desktop {
+        font-size: 1.8rem;
+        line-height: 2.5rem;
+    }
+    
+    .span {
+        font-weight: bold;
+    }
 }
 
 .header {
@@ -24,6 +33,10 @@ body {
                 display: flex;
                 align-items: center;
             }
+
+            @include m.desktop {
+                display: none;
+            }
         }
     }
 }
@@ -31,7 +44,11 @@ body {
 .nav {
 
     @include m.mobile {
-        padding: 1% 0;
+        padding: 1rem 0;
+    }
+    
+    @include m.desktop {
+        padding: 1rem 0;
     }
 
     .navbottom {
@@ -40,14 +57,22 @@ body {
             align-items: center;
         }
 
+        @include m.desktop {
+            display: flex;
+            align-items: center;
+        }
+
         &__link {
 
             @include m.mobile {
                 padding: 1rem;
-                margin-top: 1rem;
+                margin-top: .5rem;
             }
-            margin-left: 1rem;
-            margin-right: 1rem;
+
+            @include m.desktop {
+                padding: 2rem;
+                margin-top: .5rem;
+            }
         }
 
         &__icon {
@@ -57,17 +82,37 @@ body {
 }
 
 .container {
+    @include m.desktop {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     
     .conhead {
 
         @include m.mobile {
             border-top: .3rem solid v.$turquoise;
         }
+
+        @include m.desktop {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 70%;
+        }
         
         &__img--dk {
 
             @include m.mobile {
                 display: none;
+            }
+
+            @include m.desktop {
+                width: 100%;
+                height: auto;
+                border-top-right-radius: 2rem;
+                border-top-left-radius: 2rem;
+                border-bottom: v.$turquoise solid 1rem;
             }
         }
 
@@ -77,11 +122,16 @@ body {
                 width: 100%;
                 height: auto;
             }
+
+            @include m.desktop {
+                width: 100%;
+                height: auto;
+                display: none;
+            }
         }
     }
 
     .info {
-        //background-color: red;
 
         @include m.mobile {
             border-radius: 2rem;
@@ -89,6 +139,10 @@ body {
             top: -3rem;
             background-color: white;
             padding-top: 2rem;
+        }
+
+        @include m.desktop {
+            width: 70%;
         }
     
         .prime {
@@ -99,15 +153,47 @@ body {
                 margin-right: 1.5rem;
             }
 
+            @include m.desktop {
+                display: flex;
+                border-bottom-left-radius: 1rem;
+                border-bottom-right-radius: 1rem;
+                border: .2rem solid v.$purple;
+                border-top: 0;
+                overflow: hidden;
+            }
+
+            &__img {
+                @include m.mobile {
+                    display: none;
+                }
+
+                @include m.desktop {
+                    width: 10rem;
+                    height: 100%;
+                }
+            }
+
             .primecon {
 
                 @include m.mobile {
                     padding: 2rem;
                 }
 
+                @include m.desktop {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    margin-left: 1rem;
+                }
+
                 &__tl {
                     @include m.mobile {
                         color: v.$purple;
+                    }
+
+                    @include m.desktop {
+                        color: v.$purple;
+                        font-size: 1.8rem;
                     }
                 }
             }
@@ -124,16 +210,48 @@ body {
             overflow: hidden;
         }
 
+        @include m.desktop {
+            @include m.grid(3, 0);
+            width: 70%;
+            border: .1rem solid v.$gray;
+            border-radius: 1rem;
+            margin-top: 2rem;
+            overflow: hidden;
+            margin-bottom: 4rem;
+        }
+
         .offer {
+            @include m.desktop {
+                grid-column: 1 / 3;
+
+            }
 
             .offercon {
-                padding: 2rem;
+                @include m.mobile {
+                    padding: 2rem;
+                }
+
+                @include m.desktop {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    margin-top: 2rem;
+                    margin-left: 8rem;
+                }
 
                 &__tl {
                     color: v.$title;
 
                     @include m.mobile {
                         text-align: center;
+                        margin-bottom: 2rem;
+                    }
+                }
+
+                &__txt {
+                    @include m.desktop {
+                        font-size: 1.6rem;
+                        margin-top: 2rem;
                         margin-bottom: 2rem;
                     }
                 }
@@ -146,6 +264,11 @@ body {
                     justify-content: center;
                     margin-top: 1rem;
                     margin-bottom: 3rem;
+                }
+
+                @include m.desktop {
+                    display: flex;
+                    justify-content: center;
                 }
 
                 &__bottom {
@@ -161,6 +284,18 @@ body {
         .minfo {
             @include m.mobile {
                 padding: 0 2rem;
+            }
+
+            @include m.desktop {
+                grid-column: 1 / 3;
+                grid-row: 3 / 4;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+                border-top: .3rem solid v.$turquoise;
+                margin-left: 4rem;
             }
 
             .km,
@@ -183,6 +318,10 @@ body {
                         width: 2rem;
                         transform: rotate(-90deg);
                     }
+
+                    @include m.desktop {
+                        display: none;
+                    }
                 }
             }
 
@@ -197,6 +336,10 @@ body {
                         width: 2rem;
                         transform: rotate(90deg);
                     }
+
+                    @include m.desktop {
+                        display: none;
+                    }
                 }
             }
         }
@@ -207,9 +350,20 @@ body {
                 margin-bottom: 2rem;
             }
 
+            @include m.desktop {
+                grid-column: 1 / 4;
+                grid-row: 4;
+                background-color: v.$bgsyprime;
+                padding: 3rem 8rem;
+            }
+
             &__txt {
                 @include m.mobile {
                     padding: 3rem 2rem;
+                }
+
+                @include m.desktop {
+                    font-size: 1.5rem;
                 }
             }
         }
@@ -220,9 +374,31 @@ body {
                 overflow: hidden;
             }
 
+            @include m.desktop {
+                grid-column: 3 / 4;
+                grid-row: 1 / 4;
+            }
+
             &__img {
                 @include m.mobile {
                     width: 100%;
+                }
+
+                @include m.desktop {
+                    display: none;
+                }
+            }
+
+            .imgfooterdk {
+                @include m.desktop {
+                    display: flex;
+                    justify-content: flex-end;
+                }
+
+                &__img--desktop {
+                    @include m.desktop {
+                        width: 30rem;
+                    }
                 }
             }
         }
