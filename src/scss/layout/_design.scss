@@ -396,6 +396,10 @@ body {
                 }
 
                 &__img--desktop {
+                    @include m.mobile {
+                        display: none;
+                    }
+
                     @include m.desktop {
                         width: 30rem;
                     }

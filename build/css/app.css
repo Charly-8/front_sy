@@ -413,6 +413,11 @@ body .span {
     justify-content: flex-end;
   }
 }
+@media (max-width: 1079px) {
+  .container .chv .imgfooter .imgfooterdk__img--desktop {
+    display: none;
+  }
+}
 @media (min-width: 1080px) {
   .container .chv .imgfooter .imgfooterdk__img--desktop {
     width: 30rem;
